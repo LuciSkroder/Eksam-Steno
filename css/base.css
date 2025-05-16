@@ -44,6 +44,14 @@ h2 {
     color: #F4E6E6;
 }
 
+h3 {
+    font-family: 'Bright Mirage';
+    text-align: center;
+    font-size: 36px;
+    margin-top: 8px;
+    color: #F4E6E6;
+}
+
 .forside-kasse {
     position: absolute;
     top: 0;
