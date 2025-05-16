@@ -20,6 +20,17 @@
 h1 {
     font-family: 'Bright Mirage';
     text-align: center;
+    font-size: 72px;
+    margin-top: 80px;
+    color: #F4E6E6;
+}
+
+h2 {
+    font-family: 'Bright Mirage';
+    text-align: center;
+    font-size: 54px;
+    margin-top: 540px;
+    color: #F4E6E6;
 }
 
 .forside-kasse {
