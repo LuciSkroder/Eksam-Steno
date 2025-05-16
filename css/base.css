@@ -5,6 +5,16 @@
     font-family: 'Montserrat';
 }
 
+.shadow-box{
+    background-color: #1B1B1B;
+    opacity: 35%;
+    z-index: -1;
+    width: 1366px;
+    height: 1024px;
+    position: absolute;
+    top: 0;
+}
+
 .forside {
     background-image: url(/imgs/);
 }
