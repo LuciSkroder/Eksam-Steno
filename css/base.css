@@ -16,7 +16,8 @@
 }
 
 .forside {
-    background-image: url(/imgs/);
+    background-image: url(/imgs/kroppen.png);
+    background-size: 1366px 1024px;
 }
 
 .return {
