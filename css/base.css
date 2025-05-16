@@ -5,6 +5,10 @@
     font-family: 'Montserrat';
 }
 
+.forside {
+    background-image: url(/imgs/);
+}
+
 .return {
     width: 4.75rem;
     position: absolute;
@@ -15,6 +19,8 @@
 
 h1 {
     font-family: 'Bright Mirage';
+    margin-left: 50rem;
+    margin-right: auto;
 }
 
 @font-face {
