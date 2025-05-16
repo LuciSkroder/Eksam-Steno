@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+.return {
+    width: 4.75rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+}
+
+h1 {
+    font-family: 'Bright Mirage';
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('Montserrat-Thin.woff2') format('woff2'),
+        url('Montserrat-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bright Mirage';
+    src: url('BrightMirage.woff2') format('woff2'),
+        url('BrightMirage.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
