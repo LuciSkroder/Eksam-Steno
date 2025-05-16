@@ -1,3 +1,6 @@
-main {
-    background-image: url(/imgs/tidslinje-baggrund.jpg);
+.fortid {
+    background-image: url(../imgs/tidslinje-baggrund.jpg);
+    background-size: 1366px 1024px;
+    width: 1366px;
+    height: 1024px;
 }
