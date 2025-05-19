@@ -2,62 +2,64 @@
 
 const story = [
     {
-        titel: "Sarah's tidslinje", 
-        text:"Læs om Sarah's liv med endometriose, hvordon hun fik sin diagnose, hvilke problemer hun har haft undervejs, og hvad hun til sidst valgte at gøre."
+        titel: "Sarah's tidslinje",
+        alder: "",
+        text:"Læs om Sarah's liv med endometriose, hvordon hun fik sin diagnose, hvilke problemer hun har haft undervejs, og hvad hun til sidst valgte at gøre.",
+        expanded: "Den fiktive person Sarah er en repræsentation af hvordan det kan være at leve med endometriose. Hun er baseret på interviews og information man kan finde online."
     },
     {
         titel: "Puberteten",
         alder: "- 13år",
         text:"Sarah fik sin første menstruation (mens), en uge efter hun blev 13. Den tredje gang hun fik sin mens gjorde det mere ondt og i et lidt større område, men fik at vide fra sin mor at det er bare hendes krop der skulle blive vant til det.",
-        expanded:""
+        expanded:"Endometriosevæv begynder ikke at vokse, når man får menstruation første gang, det kan begynde at vokse fra man er helt lille. Endometriosevævet reagerer på de høje hormonniveauer i kroppen under menstruationen og opfører sig ligesom vævet i livmoderen og begynder at krampe og bløde. Dette gør, at kroppen danner arvæv over de områder, der er ramt af endometriose. Arvæv er et problem fordi det er meget stivt og vil ikke bevæge sig.  Dette medfølger, at når man får menstruation igen, vil det både være endometriosevævet der gør ondt men også arvæv der hiver i kroppen. Arvævet kan også gøre ondt selvom man ikke har menstruation, da det ikke går væk."
     },
     {
         titel: "Slemme smerterne",
         alder: "- 16år",
         text:"Da Sarah var 16 fik hun recept på panodil og ipren mod hendes slemme mens smerter, og da hun luftede ideen om at hendes mens ikke var helt normal, sagde lægen bare at nogle gange var man uheldig og fik mange smerter.",
-        expanded:""
+        expanded:"Mange kvinder oplever ikke at blive hørt af læger, eller at lægerne nedspiller deres symptomer. Dette er uafhænigt af lægens eget køn, og er især et problem med endometriose. Der er to måder at diagnoser endometriose på, enten igennem at patienten fortæller hvor ondt de har, eller at man laver ultralydsskanning for at finde tegn på væv der ikke skal være der. En mere invasiv diagnose form er at operere for at finde vævet, da det kan være svært at se på skanninger. Normalt burde menstruationssmerter ikke påvirke din dagligdag udover ubehag og mild smerte, der kan håndteres med ipren."
     },
     {
         titel: "Hormonbehandling",
         alder: "- 20år",
         text:"Da Sarah var 20 var hun til et tjek for livmoderhalskræft og gynækologen nævnte at det så lidt unormalt ud hos hende. Samme uge fik hun tid til en ultralydsscanning, hvor man kunne se små vækster rundt omkring i hendes underliv, især på livmoderen og æggestokkene. Måneden efter var hun begyndt på hormonbehandling mod sin nye endometriose diagnose.",
-        expanded:""
+        expanded:"Indersiden af livmoderen kan blive påvirket af endometriosevæv, der vokser på ydersiden. Dette kan nogle gange ses hos en gynækolog undersøgelse som små buler der presser ind på livmoderen, eller at livmoderen ikke er helt lige så elastisk som den skal være, pga. arvæv der hiver i den. Det der typisk ses på ultralydsskanninger er de ophobninger af blød, der er tilbage efter menstruationen, også kaldet chokolade cyster. Blodet har ikke nogen steder at komme hen når man bløder indvendigt og pga. arvævet kan kroppen ikke optage blodet, derfor hober det sig op i disse cyster, der skaber mere og mere tryk, som de vokser. Cysterne kommer tit på livmoderen og æggestokkene, netop fordi livmoderen har menstruation og dermed også hiver i det væv, der sidder på ydersiden."
     },
     {
         titel: "Operation",
         alder: "- 24år",
         text:"Da Sarah var 24 blev hun nødt til at få en operation for at få fjernet nogle chokolade cyster, ophobninger af gammelt blod, i hendes underliv da de var vokset for store og havde meget arvæv. Cysterne gav hende meget ømhed i maven og hun følte sig ofte fyldt ud pga det.",
-        expanded:""
+        expanded:"Endometriose er en kronisk betændelsestilstand, men betændelse kan varierer meget i sværhedsgrad og påvirkning. Det er også derfor at nogle med endometriose har smerter konstant fordi deres væv er så betændt og irriteret. De får altså ikke fred når deres menstruation er overstået. Betændelse er desuden sundhedsskadeligt i længden og kan føre til hjerte-kar-sygdomme og et svækket immunforsvar. Typisk bliver endometriosevæv fundet i den nederste del af bughulen, altså omkring livmoderen, tarmen, blæren og nyrerne. Men kan også være andre steder, såsom på lungerne, i halsen, eller i meget sjældne tilfælde udvendigt på huden ved fx. navlen eller omkring negleroden."
     },
     {
         titel: "Gift",
         alder: "- 29år",
         text:"Da Sarah var 29 blev hun gift og ville gerne have et barn med sin mand. Hun tog til lægen og snakkede om hendes muligheder med sin diagnose og fik at vide at hun ville have en lavere chance for at blive gravid pga. arvæv på hendes æggestokke, men det var muligt.",
-        expanded:""
+        expanded:"Endometriosevæv reagerer på østrogen ligesom det væv som sidder i livmoderen, endometrium, som endometriose er navngivet efter. Østrogen er med til at styre kroppens menstruationscyklus. Når østrogenniveauet i kroppen falder, begynder menstruationen, når de yderste lag af endometrium går i stykker og bløder. Når selve menstruationen er ovre, fortsætter menstruationscyklussen og øger østrogenen i kroppen igen, der hjælper livmoderen til at blive klar til muligvis at blive gravid, og gro nyt endometrium væv. På samme måde har endometriosevævet en cyklus, der følger kroppens egen, bløder under menstruationen og vokser bagefter. Grunden til at endometriosevævet kan vokse og sprede sig, er fordi vævet er i stand til at optage aromatase, det stof der bruges til at producere østrogen, og dermed lave sit eget. Sådan promoverer endometriosevævet sin egen vækst, og kan i nogle tilfælde skabe hormon ubalance i kroppen."
     },
     {
         titel: "Gravid",
         alder: "- 31år",
         text:"Da Sarah var 31 lykkedes det hende at blive gravid. Den første måned havde hun ikke smerter fordi hendes mens stoppede, men efter det begyndte det at gøre ondt hele tiden. Hun tog til lægen som konkluderede at hun havde noget arvæv der gjorde at hendes livmoder ikke kunne vokse korrekt. Hun endte med at skulle have en operation mere for at fjerne det arvæv, der sad i vejen.",
-        expanded:""
+        expanded:"Under graviditet stopper den normale menstruationscyklus, og gør at kroppen ikke får et lavt østrogen niveau. Fordi det er det lave østrogen niveau der får endometriosevæv til at bløde. Under graviditeten udvider livmoderen sig for at gøre plads til barnet der vokser. Denne udvidelse og omrokering i bughulen hiver ofte i arvæv, der er dannet pga. endometriose og giver smerter. Hvis arvævet er slemt nok eller sidder dårligt, kan det skabe komplikationer ved graviditeten og give smerter, og typisk vil blive fjernet ved operation. Et normalt niveau af østrogen ligger mellem 30-400 pg/mL og under graviditeten kan nå op på over 6000 pg/mL til sidst i graviditeten. Selvom at østrogen niveauet bliver så højt betyder det ikke at endometriosevævet vokser ekstra meget, og i nogle tilfælde vokser det slet ikke under graviditeten men bliver den størrelse, det var før."
     },
     {
         titel: "Tilbagevendt",
         alder: "- 33år",
         text:"Da Sarah blev 33 var hun lige blevet færdig med at amme sit barn. Kort efter begyndte hendes mens igen og hendes normale endometriose smerter kom tilbage. Pausen fra smerterne havde været god for Sarah, men hun er samtidig meget udmattet over at skulle døje med det igen.",
-        expanded:""
+        expanded:"Efter gradviditet falder østrogenniveauet i kroppen meget, og forbliver lavt så længe man ammer. Dette sker fordi kroppen producerer Prolaktin, som er det hormon der bruges til at producere brystmælk, men Prolaktin går også ind og hæmmer ægløsning. Det vil sige, at menstruationscyklussen ikke kan bevæge sig fra det lave østrogen niveau op til det høje. Lavt østrogen har en negativ effekt på endometriosevæv, hvor enkelte områder kan dø helt pga. manglen på østrogen. Mange oplever en lindring i endometriose smerter efter amning, og lindringen virker til at have en direkte korrelation med længden på amning. Det vil sige, jo længere tid man ammer, jo mindre smerte bagefter. Arvæv og chokolade cyster forsvinder ikke ligesom endometriosevævet, og vil fortsætte med at skabe betændelse og smerte."
     },
     {
         titel: "Valget",
         alder: "- 36år",
         text:"Da Sarah var 36, havde hun og hendes mand besluttet, at de ikke ville have flere børn. Derfor tog hun kontakt til sin læge om at få hendes livmoder opereret ud for at lindre symptomerne på endometriose. Lægen fortalte at det ikke var en mirakelløsning, men det burde hjælpe en del på hendes smerte.",
-        expanded:""
+        expanded:"Endometriose er ikke en livmoder sygdom, men en sygdom der typisk sidder rundt om livmoderen. Ved at fjerne livmoderen kan man stoppe menstruationscyklussen og dermed mindske ens østrogen niveau. Ved at kontrollere sine hormoner på den måde kan man nemmere styre endometriosen og smerter derfra. Kønshormoner som østrogen og testosteron en vigtig del af kroppens normale balance og derfor kan man ikke undvære at have mindst en af dem. Kønshormoner hjælper blandt andet hjernen med at regulere følelser og andre typer for hormoner og signalstoffer i kroppen. Mangel på kønshormon vil også føre til knoglesvind, en tilstand som hedder osteoporosis. Derfor skal nogen tage supplerende hormonbehandling efter fjernelse af livmoderen for at sikre kroppen kan regulere sig selv."
     },
     {
         titel: "Livmoder fjernes",
         alder: "- 37år",
         text:"Året efter fik Sarah operationen. Her fjernede de hendes livmoder og alt det endometriosevæv, de kunne finde. I dag er Sarahs smerte meget mere håndterbar. Sarah fortryder ikke sine valg, og lever sit liv fuldt ud med sin mand og deres barn.",
-        expanded:""
+        expanded:"Endometriose kan ramme alle, ikke kun kvinder, men fordi endometriosevævet reagerer på østrogen er det kun tydeligt hos dem har et højt niveau at østrogen. Det samme væv som udgør endometriose kan også vokse inde i livmoderen, dette hedder adenomyose, og de to sygdomme kan opstå på samme tid. Adenomyose giver også smerter, arvæv og komplikationer, og er også kendt som “intern endometriose”."
     }
 ]
 
@@ -69,12 +71,13 @@ function timelineStart(timePoints){
     timePoints.forEach((point) => {
         const timeElement = document.createElement("article");
         timeElement.innerHTML = `
-        <h2>${point.titel}</h2>
-        <p>${point.text}</p>
+        <h2 class="main-titel">${point.titel}</h2>
+        <h2 class="age-titel">${point.alder}</h2>
+        <p class="main-text">${point.text}</p>
         <button>Læs mere</button>`;
 
         timelineContainer.appendChild(timeElement);
     })
 };
 
-timelineStart(points)
+timelineStart(story)
