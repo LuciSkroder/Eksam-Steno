@@ -91,3 +91,13 @@ p{
 }
 
 
+.timeline-item:nth-child(even) .time-box {
+    margin-top: 40rem;    /* Skubber boksen ned */
+    margin-bottom: 0;
+}
+/* Ulige felter placeres over stregen */
+.timeline-item:nth-child(odd) .time-box {
+    margin-top: 0;
+    margin-bottom: auto; /* Skubber boksen op */
+}
+
