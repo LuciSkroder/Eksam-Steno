@@ -17,7 +17,7 @@ const story = [
         expanded:"Endometriosevæv begynder ikke at vokse, når man får menstruation første gang, det kan begynde at vokse fra man er helt lille. Endometriosevævet reagerer på de høje hormonniveauer i kroppen under menstruationen og opfører sig ligesom vævet i livmoderen og begynder at krampe og bløde. Dette gør, at kroppen danner arvæv over de områder, der er ramt af endometriose. Arvæv er et problem fordi det er meget stivt og vil ikke bevæge sig.  Dette medfølger, at når man får menstruation igen, vil det både være endometriosevævet der gør ondt men også arvæv der hiver i kroppen. Arvævet kan også gøre ondt selvom man ikke har menstruation, da det ikke går væk."
     },
     {
-        titel: "Slemme smerterne",
+        titel: "Slemme smerter",
         alder: "- 16år",
         id: 2,
         text:"Da Sarah var 16 fik hun recept på panodil og ipren mod hendes slemme mens smerter, og da hun luftede ideen om at hendes mens ikke var helt normal, sagde lægen bare at nogle gange var man uheldig og fik mange smerter.",
@@ -90,8 +90,8 @@ function timelineStart(timePoints){
         timeElement.classList.add("timeline-item");
         timeElement.innerHTML = `
         <section class="time-box">
-            <h2 class="main-titel">${point.titel}</h2>
-            <h2 class="age-titel">${point.alder}</h2>
+            <h2 class="main-titel">${point.titel}
+            <span class="age-titel">&nbsp;${point.alder}</span></h2>
             <p class="main-text">${point.text}</p>
             <button class="text-btn readMoreButton${point.id}">Læs mere</button>
         </section>`;
