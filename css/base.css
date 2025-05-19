@@ -87,8 +87,8 @@ h3 {
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/montserrat-thin.woff2') format('woff2'),
-        url('../fonts/montserrat-thin.woff') format('woff');
+    src: url('../fonts/montserrat-regular.woff2') format('woff2'),
+        url('../fonts/montserrat-regular.woff') format('woff');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
