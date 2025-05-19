@@ -116,7 +116,7 @@ function timelineStart(timePoints){
         const timeElement = document.createElement("article");
         timeElement.classList.add("timeline-item");
         timeElement.innerHTML = `
-        <section class="time-box">
+        <section class="time-box" style="position: relative">
             <h2 class="main-titel">${point.titel}
             <span class="age-titel">&nbsp;${point.alder}</span></h2>
             <p class="main-text">${point.text}</p>
@@ -205,10 +205,14 @@ const infiniteScroll = () => {
 const textButtons = document.querySelectorAll(".text-btn");
 const closeButton = document.getElementById("luk");
 
+let lastExpandedEvent = undefined;
+let lastExpandedEventContainer = undefined;
+
 function expand(event){
     const infoBox = document.getElementById("info-box");
     const exBox = document.getElementById("udvidet-kasse");
     const expandedText = document.getElementById("udvidet-tekst");
+    
 
     const storyId = event.target.classList[1].replace('readMoreButton', '');
     const dataObject = story[storyId];
@@ -223,6 +227,18 @@ function expand(event){
     exBox.classList.add("show");
     expandedText.classList.add("show");
     closeButton.classList.add("show");
+    
+    lastExpandedEventContainer = event.target.parentElement
+    lastExpandedEvent = lastExpandedEventContainer.getElementsByTagName('h2')[0];
+    
+    lastExpandedEventContainer.style.position = "";
+    lastExpandedEvent.style.top = `${lastExpandedEventContainer.getBoundingClientRect().top}px`;
+    lastExpandedEvent.style.left = `${lastExpandedEventContainer.getBoundingClientRect().left}px`;
+    const _cannotBeRemoved = lastExpandedEventContainer.getBoundingClientRect();
+    lastExpandedEvent.style.transition = "all 0.6s ease-in-out";
+    lastExpandedEvent.style.zIndex = 1000;
+    lastExpandedEvent.style.top = `170px`;
+    lastExpandedEvent.style.left = `200px`;    
 }
 
 function close(){
@@ -230,6 +246,17 @@ function close(){
     const exBox = document.getElementById("udvidet-kasse");
     const expandedText = document.getElementById("udvidet-tekst");
 
+    if(lastExpandedEvent){
+        lastExpandedEvent.style.top = `${lastExpandedEventContainer.getBoundingClientRect().top}px`;
+        lastExpandedEvent.style.left = `${lastExpandedEventContainer.getBoundingClientRect().left}px`;
+        setTimeout(() => {
+            lastExpandedEvent.style.transition = "unset";
+            lastExpandedEvent.style.zIndex = 'auto';
+            lastExpandedEventContainer.style.position = "relative";
+            lastExpandedEvent.style.top = `0`;
+            lastExpandedEvent.style.left = `0`;
+        }, 600);
+    }
     infoBox.classList.remove("show");
     exBox.classList.remove("show");
     expandedText.classList.remove("show");
