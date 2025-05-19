@@ -1,6 +1,36 @@
-.forultra {
+/* .forultra {
     background-image: url(../imgs/dummie-2.png);
     background-size: 1366px 1024px;
     width: 1366px;
     height: 1024px;
+} */
+
+article {
+    position: relative;
+    width: 1366px;
+    height: 1024px;
+    aspect-ratio: 1 / 1; /* eller brug en fast højde fx height: 50rem; */
+    overflow: hidden;
+}
+
+.dommie1, dommie2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100rem;
+    height: 100%; /* sørger for fuld højde */
+    object-fit: cover; /* skalerer billedet så det fylder containeren */
+}
+
+.dommie1 {
+    z-index: 1;
+}
+
+.dommie2 {
+    z-index: 0;
+}
+
+.return {
+    z-index: 3;
 }
