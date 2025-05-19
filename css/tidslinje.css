@@ -3,34 +3,34 @@
     background-size: 1366px 1024px;
     width: 1366px;
     height: 1024px;
+    overflow-y: hidden;
 }
 
-#timeline-container{
+#timeline-container {
     display: flex;
     gap: 4rem;
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-behavior: auto;
     max-width: 1366px;
     width: 100%;
 }
 
-#timeline-container :where(.main-titel, .age-titel, .main-text, .text-btn){
+#timeline-container :where(.main-titel, .age-titel, .main-text, .text-btn) {
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-.timeline-item{
-    width: 300px;
+.timeline-item {
+    width: 446px;
     flex-shrink: 0;
 }
 
-.dragging{
+.dragging {
     cursor: grabbing;
     user-select: none;
 }
 
-#info-box{
+#info-box {
     position: fixed;
     top: 0;
     left: 0;
@@ -43,42 +43,35 @@
     z-index: 1000;
 }
 
-#udvidet-kasse{
-    background-color: white;
+#udvidet-kasse {
+    background-color: #F4E6E6;
     padding: 2rem;
-    max-width: 600px;
+    width: 1065px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    max-height: 80vh;
+    height: 690px;
     overflow-y: auto;
 }
 
-#luk{
+#luk img {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: red;
-    color: white;
+    top: 10rem;
+    right: 9.1rem;
     border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-weight: bold;
+    width: 8rem;
 }
 
-#udvidet-tekst{
-
+#udvidet-tekst {
+    color: black;
+    font-size: 1.75rem;
 }
 
-.hidden{
+.hidden {
     display: none !important;
 }
 
-.show{
+.show {
     display: flex !important;
-}
-
-#mere-1, #mere-2, #mere-3, #mere-4, #mere-5, #mere-6, #mere-7, #mere-8, #mere-9{
-
 }
 
 h2 {
@@ -86,18 +79,52 @@ h2 {
     color: #90D7FC;
 }
 
-p{
+p {
     color: #F5E6E6;
 }
-
 
 .timeline-item:nth-child(even) .time-box {
     margin-top: 40rem;    /* Skubber boksen ned */
     margin-bottom: 0;
 }
+
 /* Ulige felter placeres over stregen */
 .timeline-item:nth-child(odd) .time-box {
     margin-top: 0;
     margin-bottom: auto; /* Skubber boksen op */
+    padding-top: 2.3rem;
 }
 
+.time-box {
+    display: grid;
+    grid-template-areas: 
+        "titel age"
+        "text text"
+        "button button";
+    grid-template-columns: 1fr;
+}
+
+.time-box > h2.main-titel {
+    grid-area: titel;
+}
+
+.time-box > h2.age-titel {
+    grid-area: age;
+}
+
+.time-box > p.main.text {
+    grid-area: text;
+}
+
+.time-box > button.text-btn {
+    grid-area: button;
+}
+
+h2 {
+    font-size: 50px;
+    font-weight: 100;
+}
+
+h2 .age-titel {
+    font-family: 'Montserrat';
+}
