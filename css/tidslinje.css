@@ -5,6 +5,31 @@
     height: 1024px;
 }
 
+#timeline-container{
+    display: flex;
+    gap: 4rem;
+    overflow-x: auto;
+    scroll-behavior: auto;
+    max-width: 1366px;
+    width: 100%;
+}
+
+#timeline-container :where(.main-titel, .age-titel, .main-text, .text-btn){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.timeline-item{
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.dragging{
+    cursor: grabbing;
+    user-select: none;
+}
+
 #mere-1, #mere-2, #mere-3, #mere-4, #mere-5, #mere-6, #mere-7, #mere-8, #mere-9{
 
 }

@@ -66,18 +66,99 @@ const story = [
 const timelineContainer = document.getElementById("timeline-container")
 
 function timelineStart(timePoints){
-    timelineContainer.innerHTML = "",
+    const prependItems = timePoints.slice(-3);
+    const appendItems = timePoints.slice(0, 3);
+    const extendedTimeline = [...prependItems, ...timePoints, ...appendItems];
 
-    timePoints.forEach((point) => {
+    timelineContainer.innerHTML = "";
+
+    extendedTimeline.forEach((point, index) => {
         const timeElement = document.createElement("article");
+        timeElement.classList.add("timeline-item");
         timeElement.innerHTML = `
-        <h2 class="main-titel">${point.titel}</h2>
-        <h2 class="age-titel">${point.alder}</h2>
-        <p class="main-text">${point.text}</p>
-        <button>Læs mere</button>`;
-
+        <section class="time-box">
+            <h2 class="main-titel">${point.titel}</h2>
+            <h2 class="age-titel">${point.alder}</h2>
+            <p class="main-text">${point.text}</p>
+            <button class="text-btn">Læs mere</button>
+        </section>`;
         timelineContainer.appendChild(timeElement);
     })
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            const middleIndex = prependItems.length;
+            const middleChild = timelineContainer.children[middleIndex];
+            const centerOffset = middleChild.offsetLeft - (timelineContainer.offsetWidth / 2) + (middleChild.offsetWidth / 2);
+            timelineContainer.scrollLeft = centerOffset;
+            });
+    });
 };
 
 timelineStart(story)
+
+
+let isDragging = false, startX, startScrollLeft;
+
+const dragStart = (e) =>{
+    if (e.type === "touchstart") {
+        isDragging = true;
+        timelineContainer.classList.add("dragging");
+        startX = e.touches[0].pageX;
+        startScrollLeft = timelineContainer.scrollLeft;
+        e.preventDefault();
+    } else if (e.type === "mousedown"){
+    isDragging = true;
+    timelineContainer.classList.add("dragging");
+    startX = e.pageX
+    startScrollLeft = timelineContainer.scrollLeft
+    }
+}
+
+const dragging = (e) => {
+    if(!isDragging) return;
+
+    if (e.type === "touchmove") {
+        const currentX = e.touches[0].pageX;
+        timelineContainer.scrollLeft = startScrollLeft - (currentX - startX);
+        e.preventDefault();
+    } else if (e.type === "mousemove") {
+        const currentX = e.pageX;
+        timelineContainer.scrollLeft = startScrollLeft - (currentX - startX);
+    }
+}
+
+const dragStop = () =>{
+    isDragging = false;
+    timelineContainer.classList.remove("dragging");
+}
+
+const infiniteScroll = () => {
+    const items = document.querySelectorAll(".timeline-item");
+    if (!items.length) return;
+
+    const itemWidth = items[0].offsetWidth + 64; // item width + gap
+    const totalRealItems = story.length;
+    const buffer = itemWidth; // one item's width as buffer
+    const scrollLeft = timelineContainer.scrollLeft;
+    const maxScroll = itemWidth * (totalRealItems + 3);
+    const minScroll = itemWidth * 3;
+
+    if (scrollLeft < minScroll - buffer) {
+        timelineContainer.scrollLeft += itemWidth * totalRealItems;
+    }
+
+    if (scrollLeft > maxScroll - buffer) {
+        timelineContainer.scrollLeft -= itemWidth * totalRealItems;
+    }
+};
+
+timelineContainer.addEventListener("scroll", infiniteScroll)
+
+timelineContainer.addEventListener("mousedown", dragStart);
+timelineContainer.addEventListener("mousemove", dragging);
+timelineContainer.addEventListener("mouseup", dragStop);
+
+timelineContainer.addEventListener("touchstart", dragStart, {passive: false});
+timelineContainer.addEventListener("touchmove", dragging, {passive: false});
+timelineContainer.addEventListener("touchend", dragStop);
