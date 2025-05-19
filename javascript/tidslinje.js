@@ -101,6 +101,10 @@ function timelineStart(timePoints){
 //Her kalder vi vores timeline så den er synlig med det samme man er på siden.
 timelineStart(story)
 
+const overlay = document.getElementById("info-box");
+const overlayText = document.getElementById("udvidet-tekst");
+const closeOverlayBtn = document.getElementById("luk");
+
 //Denne variable holder styr på om der trækkes (dragges), hvor brugeren startede, og hvor tidslinjen var scroll'et til ved starten af drag. Bruges til både mus og touch.
 let isDragging = false, startX, startScrollLeft;
 
@@ -145,9 +149,9 @@ const infiniteScroll = () => {
     const items = document.querySelectorAll(".timeline-item");
     if (!items.length) return;
 
-    const itemWidth = items[0].offsetWidth + 64; // item width + gap
+    const itemWidth = items[0].offsetWidth + 64;
     const totalRealItems = story.length;
-    const buffer = itemWidth; // one item's width as buffer
+    const buffer = itemWidth;
     const scrollLeft = timelineContainer.scrollLeft;
     const maxScroll = itemWidth * (totalRealItems + 3);
     const minScroll = itemWidth * 3;
@@ -161,9 +165,20 @@ const infiniteScroll = () => {
     }
 };
 
+const textButton = document.querySelector("text-btn")
+const expandedText = document.getElementById("udvidet-tekst")
+
+function expand(){
+    expandedText.innerHTML = "";
+
+    story.prototype.find(story.indexOf(textButton))
+}
+
+console.log(story.indexOf(textButton));
 
 //Vores eventListeners sikre at vores script køre responsivt og er interaktivt, uanset om du er på computer eller en tablet.
 timelineContainer.addEventListener("scroll", infiniteScroll)
+textButton.addEventListener("click", expand)
 
 timelineContainer.addEventListener("mousedown", dragStart);
 timelineContainer.addEventListener("mousemove", dragging);

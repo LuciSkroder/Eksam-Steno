@@ -30,6 +30,53 @@
     user-select: none;
 }
 
+#info-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* semitransparent baggrund */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#udvidet-kasse{
+    background-color: white;
+    padding: 2rem;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+#luk{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: red;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#udvidet-tekst{
+
+}
+
+.hidden{
+    display: none !important;
+}
+
+.show{
+    display: flex;
+}
+
 #mere-1, #mere-2, #mere-3, #mere-4, #mere-5, #mere-6, #mere-7, #mere-8, #mere-9{
 
 }
