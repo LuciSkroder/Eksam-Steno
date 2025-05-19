@@ -9,28 +9,36 @@ article {
     position: relative;
     width: 1366px;
     height: 1024px;
-    aspect-ratio: 1 / 1; /* eller brug en fast højde fx height: 50rem; */
     overflow: hidden;
-}
-
-.dommie1, dommie2 {
+  }
+  
+  .dommie1,
+  .dommie2 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    max-width: 100rem;
-    height: 100%; /* sørger for fuld højde */
-    object-fit: cover; /* skalerer billedet så det fylder containeren */
-}
-
-.dommie1 {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .dommie1 {
+    background-image: url("/imgs/dummie-2.PNG");
     z-index: 1;
-}
-
-.dommie2 {
+    pointer-events: none;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  
+  .dommie2 {
+    background-image: url("/imgs/dummie-1.PNG");
     z-index: 0;
-}
-
-.return {
-    z-index: 3;
-}
+  }
+  
+  .masked {
+    mask-image: radial-gradient(circle 100px at var(--x) var(--y), transparent 0%, black 100%);
+    -webkit-mask-image: radial-gradient(circle 100px at var(--x) var(--y), transparent 0%, black 100%);
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+  }
