@@ -74,7 +74,7 @@
 }
 
 .show{
-    display: flex;
+    display: flex !important;
 }
 
 #mere-1, #mere-2, #mere-3, #mere-4, #mere-5, #mere-6, #mere-7, #mere-8, #mere-9{

@@ -165,20 +165,45 @@ const infiniteScroll = () => {
     }
 };
 
-const textButton = document.querySelector("text-btn")
-const expandedText = document.getElementById("udvidet-tekst")
+let textButton = document.querySelector(".text-btn")
+const closeButton = document.getElementById("luk")
 
-function expand(){
-    expandedText.innerHTML = "";
-
-    story.prototype.find(story.indexOf(textButton))
+function expand() {
+    const infoBox = document.getElementById("info-box");
+    const exBox = document.getElementById("udvidet-kasse");
+    const expandedText = document.getElementById("udvidet-tekst");
+    console.log("0")
+    expandedText.innerHTML = story[index].expanded;
+    console.log("1")
+    infoBox.classList.remove("hidden");
+    exBox.classList.remove("hidden");
+    expandedText.classList.remove("hidden");
+    closeButton.classList.remove("hidden");
+    infoBox.classList.add("show")
+    exBox.classList.add("show")
+    expandedText.classList.add("show")
+    closeButton.classList.add("show")
 }
 
-console.log(story.indexOf(textButton));
+function close(){
+    const infoBox = document.getElementById("info-box");
+    const exBox = document.getElementById("udvidet-kasse");
+    const expandedText = document.getElementById("udvidet-tekst");
+
+    infoBox.classList.remove("show");
+    exBox.classList.remove("show");
+    expandedText.classList.remove("show");
+    closeButton.classList.remove("show");
+    infoBox.classList.add("hidden")
+    exBox.classList.add("hidden")
+    expandedText.classList.add("hidden")
+    closeButton.classList.add("hidden")
+}
 
 //Vores eventListeners sikre at vores script køre responsivt og er interaktivt, uanset om du er på computer eller en tablet.
 timelineContainer.addEventListener("scroll", infiniteScroll)
-textButton.addEventListener("click", expand)
+textButton.addEventListener("click", expand);
+closeButton.addEventListener("click", close)
 
 timelineContainer.addEventListener("mousedown", dragStart);
 timelineContainer.addEventListener("mousemove", dragging);
