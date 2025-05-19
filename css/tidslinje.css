@@ -80,3 +80,24 @@
 #mere-1, #mere-2, #mere-3, #mere-4, #mere-5, #mere-6, #mere-7, #mere-8, #mere-9{
 
 }
+
+h2 {
+    margin-top: 1rem;
+    color: #90D7FC;
+}
+
+p{
+    color: #F5E6E6;
+}
+
+
+.timeline-item:nth-child(even) .time-box {
+    margin-top: 40rem;    /* Skubber boksen ned */
+    margin-bottom: 0;
+}
+/* Ulige felter placeres over stregen */
+.timeline-item:nth-child(odd) .time-box {
+    margin-top: 0;
+    margin-bottom: auto; /* Skubber boksen op */
+}
+
