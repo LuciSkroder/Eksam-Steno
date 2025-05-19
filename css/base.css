@@ -87,8 +87,8 @@ h3 {
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('Montserrat-Thin.woff2') format('woff2'),
-        url('Montserrat-Thin.woff') format('woff');
+    src: url('../fonts/montserrat-thin.woff2') format('woff2'),
+        url('../fonts/montserrat-thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -96,8 +96,8 @@ h3 {
 
 @font-face {
     font-family: 'Bright Mirage';
-    src: url('BrightMirage.woff2') format('woff2'),
-        url('BrightMirage.woff') format('woff');
+    src: url('../fonts/brightmirage.woff2') format('woff2'),
+        url('../fonts/brightmirage.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

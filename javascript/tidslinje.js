@@ -83,7 +83,7 @@ function timelineStart(timePoints){
             <h2 class="main-titel">${point.titel}</h2>
             <h2 class="age-titel">${point.alder}</h2>
             <p class="main-text">${point.text}</p>
-            <button class="text-btn" onclick="expand()">Læs mere</button>
+            <button class="text-btn">Læs mere</button>
         </section>`;
         timelineContainer.appendChild(timeElement);
     })
@@ -165,23 +165,16 @@ const infiniteScroll = () => {
     }
 };
 
-const textButton = document.querySelector(".text-btn");
+const textButtons = document.querySelectorAll(".text-btn");
 const closeButton = document.getElementById("luk");
-console.log(textButton);
+console.log(textButtons);
 console.log(closeButton);
 
-function expand() {
-    console.log("hej Bertram");
-    
+function expand(){
     const infoBox = document.getElementById("info-box");
     const exBox = document.getElementById("udvidet-kasse");
     const expandedText = document.getElementById("udvidet-tekst");
 
-    console.log("0");
-
-
-
-    console.log("1");
 
     infoBox.classList.remove("hidden");
     exBox.classList.remove("hidden");
@@ -191,6 +184,8 @@ function expand() {
     exBox.classList.add("show");
     expandedText.classList.add("show");
     closeButton.classList.add("show");
+
+    expandedText.innerText = (`${expanded}`);
 }
 
 function close(){
@@ -210,14 +205,13 @@ function close(){
 
 //Vores eventListeners sikre at vores script køre responsivt og er interaktivt, uanset om du er på computer eller en tablet.
 timelineContainer.addEventListener("scroll", infiniteScroll);
-textButton.addEventListener("click", expand);
 closeButton.addEventListener("click", close);
 
 timelineContainer.addEventListener("mousedown", dragStart);
 timelineContainer.addEventListener("mousemove", dragging);
 timelineContainer.addEventListener("mouseup", dragStop);
 
-//passive: false, gør det muligt at kalde e.preventDefault() under touch-events, hvilket forhindrer browserens standard scrolling og giver en glidende og kontrolleret brugeroplevelse.
-timelineContainer.addEventListener("touchstart", dragStart, {passive: false});
-timelineContainer.addEventListener("touchmove", dragging, {passive: false});
+timelineContainer.addEventListener("touchstart", dragStart);
+timelineContainer.addEventListener("touchmove", dragging);
 timelineContainer.addEventListener("touchend", dragStop);
+textButtons.forEach((textButton) => textButton.addEventListener("touchend", expand));
