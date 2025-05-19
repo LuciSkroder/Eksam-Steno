@@ -1,5 +1,6 @@
 "use strict";
 
+//Vi opretter et array med objekter, som indeholder alt vores information til vores tidslinje. Hvert objekt repræsenterer et punkt i tidslinjen, og vi genererer dynamisk HTML-elementer ud fra disse oplysninger
 const story = [
     {
         titel: "Sarah's tidslinje",
@@ -63,8 +64,10 @@ const story = [
     }
 ]
 
+//Finder vores beholder der har hele tidslinjene.
 const timelineContainer = document.getElementById("timeline-container")
 
+//Denne function gør 2 ting, laver vores tidslinje med alle items fra arrayen, og 3 ekstra i starten og slutningen. requestAnimationFrame bliver brugt til at sikre når vi bruger vores infiniteScroll function længere nede at DOMen opdatere flydende og ikke skaber et brat hop og istedet visuelt flyder sammen. Dette gør den ved at tage positionen i den forkortede array og hopper usynligt hen til den tilsvarende position i den fulde array.
 function timelineStart(timePoints){
     const prependItems = timePoints.slice(-3);
     const appendItems = timePoints.slice(0, 3);
@@ -95,11 +98,13 @@ function timelineStart(timePoints){
     });
 };
 
+//Her kalder vi vores timeline så den er synlig med det samme man er på siden.
 timelineStart(story)
 
-
+//Denne variable holder styr på om der trækkes (dragges), hvor brugeren startede, og hvor tidslinjen var scroll'et til ved starten af drag. Bruges til både mus og touch.
 let isDragging = false, startX, startScrollLeft;
 
+//Her starter vi en drag-handling ved at registrere brugerens startposition med enten mus eller touch. Gemmer også scrollpositionen, så vi kan beregne ny position under drag.
 const dragStart = (e) =>{
     if (e.type === "touchstart") {
         isDragging = true;
@@ -115,6 +120,7 @@ const dragStart = (e) =>{
     }
 }
 
+//Her får vi så opdateret positionen som man bevæger mus eller finger og oversætter det til bevægelse på skærmen.
 const dragging = (e) => {
     if(!isDragging) return;
 
@@ -128,11 +134,13 @@ const dragging = (e) => {
     }
 }
 
+//Her kan vi se når drag eventet er slut og kan retuner til normal opførelse.
 const dragStop = () =>{
     isDragging = false;
     timelineContainer.classList.remove("dragging");
 }
 
+//Det er denne variable der gør os i stand til at stimulere en uendelig tidslinje, ved at finde en masse information såsom mængden af items, størrelsen på items, sætte en max og min scroll og definere hvor den skal hoppe hen.
 const infiniteScroll = () => {
     const items = document.querySelectorAll(".timeline-item");
     if (!items.length) return;
@@ -153,12 +161,15 @@ const infiniteScroll = () => {
     }
 };
 
+
+//Vores eventListeners sikre at vores script køre responsivt og er interaktivt, uanset om du er på computer eller en tablet.
 timelineContainer.addEventListener("scroll", infiniteScroll)
 
 timelineContainer.addEventListener("mousedown", dragStart);
 timelineContainer.addEventListener("mousemove", dragging);
 timelineContainer.addEventListener("mouseup", dragStop);
 
+//passive: false, gør det muligt at kalde e.preventDefault() under touch-events, hvilket forhindrer browserens standard scrolling og giver en glidende og kontrolleret brugeroplevelse.
 timelineContainer.addEventListener("touchstart", dragStart, {passive: false});
 timelineContainer.addEventListener("touchmove", dragging, {passive: false});
 timelineContainer.addEventListener("touchend", dragStop);
