@@ -234,7 +234,7 @@ function expand(event){
     lastExpandedEventContainer = event.target.parentElement
     lastExpandedEvent = lastExpandedEventContainer.getElementsByTagName('h2')[0];
     
-    //Efter at have fundet det kan vi få fat i skærmens størrelse, og fjerne hvis der tidligere er blevet tilføjet noget til den udvidet-tekst kasse (da det en en statisk kasse i vores html og ikke tegnes dynamisk). Med skærmens størrelse fundet kan vi som længere ned style vores h2 i reference til skærmens størrelse istedet for dens parents størrelse, og positionere den præcist hvor vi vil have den.
+    //Efter at have fundet det kan vi fjerne positionen stylingen på beholderen så overskriften som har position: absolute, vil refere tilbage til det næste element i DOM hirakiet der har position: relative, hvilket er body som har skærmens dimensioner. Så kan vi få fat i skærmens størrelse, og som længere nede style vores h2 i reference til skærmens størrelse istedet for dens parents størrelse, og positionere den præcist hvor vi vil have den.
     lastExpandedEventContainer.style.position = "";
     lastExpandedEvent.style.top = `${lastExpandedEventContainer.getBoundingClientRect().top}px`;
     lastExpandedEvent.style.left = `${lastExpandedEventContainer.getBoundingClientRect().left}px`;
