@@ -5,6 +5,12 @@
     color: #F5E6E6;
 }
 
+.p {
+    font-family: bright mirage;
+    color: #F5E6E6;
+    z-index: 3;
+}
+
 .top {
     margin-top: 2rem;
 }
@@ -47,15 +53,11 @@ article {
     z-index: 3;
 }
 
-.p {
-    font-family: bright mirage;
-    color: #F5E6E6;
-    z-index: 3;
-}
+
 
 .masked {
-    mask-image: radial-gradient(circle 70px at var(--x) var(--y), transparent 0%, black 100%);
-    -webkit-mask-image: radial-gradient(circle 70px at var(--x) var(--y), transparent 0%, black 100%);
+    mask-image: radial-gradient(circle 80px at var(--x) var(--y), transparent 0%, black 100%);
+    -webkit-mask-image: radial-gradient(circle 80px at var(--x) var(--y), transparent 0%, black 100%);
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
 }
