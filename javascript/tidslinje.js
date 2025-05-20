@@ -104,7 +104,7 @@ const story = [
 //Finder vores beholder der har hele tidslinjene.
 const timelineContainer = document.getElementById("timeline-container")
 
-//Denne function gør 2 ting, laver vores tidslinje med alle items fra arrayen, og 3 ekstra i starten og slutningen. requestAnimationFrame bliver brugt til at sikre når vi bruger vores infiniteScroll function længere nede at DOMen opdatere flydende og ikke skaber et brat hop og istedet visuelt flyder sammen. Dette gør den ved at tage positionen i den forkortede array og hopper usynligt hen til den tilsvarende position i den fulde array.
+//Denne function gør 2 ting, laver vores tidslinje med alle items fra arrayen, og 3 ekstra i starten og slutningen (som vi bruger senere til at mulig køre infinitescroll). requestAnimationFrame bliver brugt til at sikre når vi bruger vores infiniteScroll function længere nede at vores UI ændringer sker før de bliver tegnet i DOM'en og opdatere flydende og ikke skaber et brat hop, men istedet visuelt flyder sammen. Dette gør den ved at tage positionen i den forkortede array og hopper usynligt hen til den tilsvarende position i den fulde array.
 function timelineStart(timePoints){
     const prependItems = timePoints.slice(-3);
     const appendItems = timePoints.slice(0, 3);
@@ -175,7 +175,7 @@ const dragging = (e) => {
     }
 }
 
-//Her kan vi se når drag eventet er slut og kan retuner til normal opførelse.
+//Her kan vi se når drag eventet er slut og kan retunere til normal tilstand.
 const dragStop = () =>{
     isDragging = false;
     timelineContainer.classList.remove("dragging");
@@ -208,15 +208,17 @@ const closeButton = document.getElementById("luk");
 let lastExpandedEvent = undefined;
 let lastExpandedEventContainer = undefined;
 
+//Denne function er vores læs mere knap. Functionen kunne være meget kortert hvis vi bare ville få et pop-up vindue (altså add show og remove hidden), men fordi fordi vi gerne vil animere titlen fra dens originale position til en ny, central position på skærmen, skal vi køre nogle forskellige tricks.
 function expand(event){
     const infoBox = document.getElementById("info-box");
     const exBox = document.getElementById("udvidet-kasse");
     const expandedText = document.getElementById("udvidet-tekst");
     
-
+    //Her kan vi give hver knap sin egen id ved at bruge id valuen vi har tilføjet i array. Når html'en bliver tegnet har de alle en readmore class med et tal ved at ${}, vi fjerner så readmore delen og har kun et tal tilbage der kan bruges til unikt at identificere dem.
     const storyId = event.target.classList[1].replace('readMoreButton', '');
     const dataObject = story[storyId];
     
+    //Her bruges den unikke id vi har givet dem og bliver brugt til at finde den tilsvarende udvidet tekst.
     expandedText.innerText = (`${dataObject.expanded}`);
 
     infoBox.classList.remove("hidden");
@@ -228,13 +230,19 @@ function expand(event){
     expandedText.classList.add("show");
     closeButton.classList.add("show");
     
+    //Her finder vi vores læs mere knaps forældre, altså den article vores array bliver tegnet i, og kan så finde det første h2 child.
     lastExpandedEventContainer = event.target.parentElement
     lastExpandedEvent = lastExpandedEventContainer.getElementsByTagName('h2')[0];
     
+    //Efter at have fundet det kan vi få fat i skærmens størrelse, og fjerne hvis der tidligere er blevet tilføjet noget til den udvidet-tekst kasse (da det en en statisk kasse i vores html og ikke tegnes dynamisk). Med skærmens størrelse fundet kan vi som længere ned style vores h2 i reference til skærmens størrelse istedet for dens parents størrelse, og positionere den præcist hvor vi vil have den.
     lastExpandedEventContainer.style.position = "";
     lastExpandedEvent.style.top = `${lastExpandedEventContainer.getBoundingClientRect().top}px`;
     lastExpandedEvent.style.left = `${lastExpandedEventContainer.getBoundingClientRect().left}px`;
-    const _cannotBeRemoved = lastExpandedEventContainer.getBoundingClientRect();
+
+    //Ved at laven en variable her, tvinger vi browseren til at læse layoutet og dermed færdigøre eventuelle igangværende styles eller transitions. Det er et trick der er kendt som "layout trashing" eller "force reflow", og vores kode fungere ikke uden.
+    const _forceReflow = lastExpandedEventContainer.getBoundingClientRect();
+
+    //Styling der gør at vores h2 kan bevæge sig.
     lastExpandedEvent.style.transition = "all 0.6s ease-in-out";
     lastExpandedEvent.style.zIndex = 1000;
     lastExpandedEvent.style.top = `170px`;
@@ -246,6 +254,7 @@ function close(){
     const exBox = document.getElementById("udvidet-kasse");
     const expandedText = document.getElementById("udvidet-tekst");
 
+    //Når den udvidet kasse skal lukkes igen skal vores titel bevæge sig tilbage. Dette er ikke bare at gøre det modsatte, da det at gå fra en dynamisk postion til en statisk, og fra en statisk til en dynamisk ikke fungere på samme måde i koden. Men ved at bruge timeout funktionen i JS kan vi stimulere den helt samme effekt mens h2'en får sin normale styling tilbage.
     if(lastExpandedEvent){
         lastExpandedEvent.style.top = `${lastExpandedEventContainer.getBoundingClientRect().top}px`;
         lastExpandedEvent.style.left = `${lastExpandedEventContainer.getBoundingClientRect().left}px`;
@@ -279,3 +288,7 @@ timelineContainer.addEventListener("touchstart", dragStart);
 timelineContainer.addEventListener("touchmove", dragging);
 timelineContainer.addEventListener("touchend", dragStop);
 textButtons.forEach((textButton) => textButton.addEventListener("touchend", expand));
+textButtons.forEach((textButton) => {
+    textButton.addEventListener("click", expand);
+    textButton.addEventListener("touchend", expand);
+});
