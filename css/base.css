@@ -16,7 +16,7 @@
 }
 
 .forside {
-    background-image: url(/imgs/kroppen.png);
+    background-image: url(/imgs/baggrund.PNG);
     background-size: 1366px 1024px;
 }
 
@@ -26,6 +26,7 @@
     top: 0;
     right: 0;
     margin: 1rem;
+    z-index: 2;
 }
 
 h1 {
