@@ -34,7 +34,7 @@ h1 {
     text-align: center;
     font-size: 72px;
     margin-top: 80px;
-    color: #F4E6E6;
+    color: #F5E6E6;
 }
 
 h2 {
@@ -42,7 +42,7 @@ h2 {
     text-align: center;
     font-size: 54px;
     margin-top: 540px;
-    color: #F4E6E6;
+    color: #F5E6E6;
 }
 
 h3 {
@@ -50,7 +50,7 @@ h3 {
     text-align: center;
     font-size: 36px;
     margin-top: 8px;
-    color: #F4E6E6;
+    color: #F5E6E6;
 }
 
 .forside-kasse {
@@ -65,7 +65,7 @@ h3 {
 }
 
 .blue-circle {
-    background-color: #90D7fc;
+    background-color: #90D7FC;
     display: flex;
     width: 16rem;
     height: 16rem;
