@@ -112,7 +112,7 @@ function timelineStart(timePoints){
 
     timelineContainer.innerHTML = "";
 
-    extendedTimeline.forEach((point, index) => {
+    extendedTimeline.forEach((point) => {
         const timeElement = document.createElement("article");
         timeElement.classList.add("timeline-item");
         timeElement.innerHTML = `
