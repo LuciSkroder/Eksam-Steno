@@ -239,7 +239,7 @@ function expand(event){
     lastExpandedEvent.style.top = `${lastExpandedEventContainer.getBoundingClientRect().top}px`;
     lastExpandedEvent.style.left = `${lastExpandedEventContainer.getBoundingClientRect().left}px`;
 
-    //Ved at laven en variable her, tvinger vi browseren til at læse layoutet og dermed færdigøre eventuelle igangværende styles eller transitions. Det er et trick der er kendt som "layout trashing" eller "force reflow", og vores kode fungere ikke uden.
+    //Ved at lave en variable her, tvinger vi browseren til at læse layoutet og dermed færdigøre eventuelle igangværende styles eller transitions. Det er et trick der er kendt som "layout trashing" eller "force reflow", og vores kode fungere ikke uden.
     const _forceReflow = lastExpandedEventContainer.getBoundingClientRect();
 
     //Styling der gør at vores h2 kan bevæge sig.
