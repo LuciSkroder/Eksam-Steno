@@ -10,11 +10,10 @@ article {
     position: relative;
     width: 1366px;
     height: 1024px;
-    aspect-ratio: 1 / 1; /* eller brug en fast højde fx height: 50rem; */
     overflow: hidden;
 }
 
-.dommie1, .dommie2 {
+.dummy-one, .dummy-two {
     position: absolute;
     top: 0;
     left: 0;
@@ -25,11 +24,15 @@ article {
 }
 
 
-.dommie1 {
+.dummy-one {
     z-index: 1;
+    pointer-events: none; /* vigtigt: så musen går "gennem" billedet */
+    mask-image: none;
+    -webkit-mask-image: none;
+    transition: mask-image 0.1s ease, -webkit-mask-image 0.1s ease;
 }
 
-.dommie2 {
+.dummy-two {
     z-index: 0;
 }
 
@@ -43,19 +46,9 @@ article {
     z-index: 3;
 }
 
-
-
-.dommie1 {
-    z-index: 1;
-    pointer-events: none; /* vigtigt: så musen går "gennem" billedet */
-    mask-image: none;
-    -webkit-mask-image: none;
-    transition: mask-image 0.1s ease, -webkit-mask-image 0.1s ease;
-}
-
 .masked {
-    mask-image: radial-gradient(circle 100px at var(--x) var(--y), transparent 0%, black 100%);
-    -webkit-mask-image: radial-gradient(circle 100px at var(--x) var(--y), transparent 0%, black 100%);
+    mask-image: radial-gradient(circle 70px at var(--x) var(--y), transparent 0%, black 100%);
+    -webkit-mask-image: radial-gradient(circle 70px at var(--x) var(--y), transparent 0%, black 100%);
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
 }
