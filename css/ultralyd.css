@@ -1,10 +1,17 @@
+.text-ontop {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    color: #F4E6E6;
+}
 
-/* .forultra {
-    background-image: url(../imgs/dummie-2.png);
-    background-size: 1366px 1024px;
-    width: 1366px;
-    height: 1024px;
-} */
+.top {
+    margin-top: 2rem;
+}
+
+.bottom {
+    margin-top: 8rem;
+}
 
 article {
     position: relative;
