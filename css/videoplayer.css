@@ -117,3 +117,13 @@ main {
     top: 73%;
     left: 72%;
 }
+
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: flex;
+    position: absolute;
+}
