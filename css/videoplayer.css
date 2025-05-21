@@ -119,6 +119,8 @@ main {
 }
 
 
+
+
 .hidden {
     display: none;
 }
@@ -126,4 +128,28 @@ main {
 .show {
     display: flex;
     position: absolute;
+}
+
+#video-spiller {
+    position: absolute;
+    width: 1100px;
+    height: 765px;
+    background-color: pink;
+    top: 132px;
+    left: 141px;
+    border-radius: 10px;
+}
+
+#luk {
+    width: 3.5rem;
+    height: 3.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.maskot {
+    position: absolute;
+    bottom: -14rem;
+    left: -4rem;
 }

@@ -9,7 +9,23 @@ const playVideo = document.getElementById("current-video");
 const playAudio = document.getElementById("current-audio");
 const closeX = document.getElementById("luk");
 
-function openVideo(){
+
+function openVideoOne(){
+    videoContainer.classList.remove("hidden");
+    videoContainer.classList.add("show");
+}
+
+function openVideoTwo(){
+    videoContainer.classList.remove("hidden");
+    videoContainer.classList.add("show");
+}
+
+function openVideoThree(){
+    videoContainer.classList.remove("hidden");
+    videoContainer.classList.add("show");
+}
+
+function openVideoFour(){
     videoContainer.classList.remove("hidden");
     videoContainer.classList.add("show");
 }
@@ -20,15 +36,15 @@ function closeVideo(){
 }
 
 
-videoOne.addEventListener("touchstart", openVideo);
-videoTwo.addEventListener("touchstart", openVideo);
-videoThree.addEventListener("touchstart", openVideo);
-videoFour.addEventListener("touchstart", openVideo);
+videoOne.addEventListener("touchstart", openVideoOne);
+videoTwo.addEventListener("touchstart", openVideoTwo);
+videoThree.addEventListener("touchstart", openVideoThree);
+videoFour.addEventListener("touchstart", openVideoFour);
 
-videoOne.addEventListener("click", openVideo);
-videoTwo.addEventListener("click", openVideo);
-videoThree.addEventListener("click", openVideo);
-videoFour.addEventListener("click", openVideo);
+videoOne.addEventListener("click", openVideoOne);
+videoTwo.addEventListener("click", openVideoTwo);
+videoThree.addEventListener("click", openVideoThree);
+videoFour.addEventListener("click", openVideoFour);
 
 closeX.addEventListener("touchstart", closeVideo);
 closeX.addEventListener("click", closeVideo);
