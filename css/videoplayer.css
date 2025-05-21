@@ -64,29 +64,56 @@ main {
 
 
 /* h3 styling----- */
-.video-symbol {
-    width: 55px;
-}
-
 .video-title {
     color: black;
     font-family: 'montserrat';
     position: absolute;
+    font-size: 30px;
 }
 
 #title-1 {
-    top: 53%;
+    top: 48%;
     left: 15%;
 }
+
 #title-2 {
-    top: 52%;
+    top: 47%;
     left: 63%;
 }
+
 #title-3 {
-    top: 76%;
+    top: 71%;
     left: 20%;
 }
+
 #title-4 {
-    top: 75%;
+    top: 70%;
     left: 60%;
+}
+
+
+/* symbol styling----- */
+.video-symbol {
+    width: 55px;
+    position: absolute;
+}
+
+#symbol-1 {
+    top: 48%;
+    left: 32%;
+}
+
+#symbol-2 {
+    top: 47%;
+    left: 80%;
+}
+
+#symbol-3 {
+    top: 71%;
+    left: 28%;
+}
+
+#symbol-4 {
+    top: 70%;
+    left: 72%;
 }
