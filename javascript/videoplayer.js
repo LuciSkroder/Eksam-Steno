@@ -13,26 +13,45 @@ const closeX = document.getElementById("luk");
 function openVideoOne(){
     videoContainer.classList.remove("hidden");
     videoContainer.classList.add("show");
+
+    playVideo.src = "../gifs/endometrium.GIF"
+    playAudio.src = "../lyd/endometrium.mp3"
+    playAudio.play()
 }
 
 function openVideoTwo(){
     videoContainer.classList.remove("hidden");
     videoContainer.classList.add("show");
+
+    playVideo.src = "../gifs/endometriose.GIF"
+    playAudio.src = "../lyd/endometriose.mp3"
+    playAudio.play()
 }
 
 function openVideoThree(){
     videoContainer.classList.remove("hidden");
     videoContainer.classList.add("show");
+
+    playVideo.src = "../gifs/arvaev.GIF"
+    playAudio.src = "../lyd/arvaev.mp3"
+    playAudio.play()
 }
 
 function openVideoFour(){
     videoContainer.classList.remove("hidden");
     videoContainer.classList.add("show");
+
+    playVideo.src = "../gifs/gradviditet.GIF"
+    playAudio.src = "../lyd/gravid.mp3"
+    playAudio.play()
 }
 
 function closeVideo(){
     videoContainer.classList.remove("show");
     videoContainer.classList.add("hidden");
+
+    playVideo.src = ""
+    playAudio.src = ""
 }
 
 
