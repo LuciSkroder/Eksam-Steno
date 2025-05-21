@@ -132,11 +132,15 @@ main {
 
 #video-spiller {
     position: absolute;
-    width: 1100px;
+    width: 1095px;
     height: 765px;
-    background-color: pink;
     top: 132px;
     left: 141px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px 10px RGBA(0,0,0,0.6);
+}
+
+#video-spiller #current-video {
     border-radius: 10px;
 }
 
@@ -148,10 +152,13 @@ main {
     right: 1rem;
 }
 
-.maskot {
+#maskot-container {
     position: absolute;
-    bottom: -14rem;
-    left: -4rem;
+    bottom: 0.5rem;
+    left: -3.5rem;
+    overflow-y: hidden;
+    width: 339px;
+    height: 250px;
 }
 
 #volume-slider {
