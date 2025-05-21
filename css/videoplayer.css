@@ -4,3 +4,32 @@
     width: 1366px;
     height: 1024px;
 }
+
+main {
+    max-width: 1366px;
+    max-height: 1024px;
+}
+
+.videor {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    position: absolute;
+}
+
+#video-1 {
+    top: 20%;
+    left: 10%;
+}
+#video-2 {
+    top: 25%;
+    left: 85%;
+}
+#video-3 {
+    top: 55%;
+    left: 20%;
+}
+#video-4 {
+    top: 55%;
+    left: 95%;
+}
