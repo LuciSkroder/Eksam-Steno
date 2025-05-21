@@ -14,22 +14,23 @@ main {
     width: 200px;
     height: 200px;
     border-radius: 100%;
+    box-shadow: 2px 2px 10px RGBA(0,0,0,0.5);
     position: absolute;
 }
 
 #video-1 {
-    top: 20%;
-    left: 10%;
+    top: 30%;
+    left: 7%;
 }
 #video-2 {
-    top: 25%;
-    left: 85%;
+    top: 30%;
+    left: 70%;
 }
 #video-3 {
     top: 55%;
-    left: 20%;
+    left: 10%;
 }
 #video-4 {
     top: 55%;
-    left: 95%;
+    left: 75%;
 }
